@@ -1,0 +1,108 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mailbob/block-subscription",
+  "version": "0.1.0",
+  "title": "Mailbob Subscription",
+  "category": "widgets",
+  "icon": "email-alt",
+  "description": "Add an email Mailbob Subscription/newsletter form.",
+  "example": {},
+  "supports": {
+    "interactivity": true,
+    "html": false,
+    "background": {
+      "backgroundImage": true,
+      "backgroundSize": true
+    },
+    "typography": {
+      "color": false,
+      "fontSize": true,
+      "lineHeight": true,
+      "textAlign": false
+    }
+  },
+  "attributes": {
+    "backgroundColor": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "inherit"
+    },
+    "formStyle": {
+      "type": "string",
+      "default": "mailbob-form-inline"
+    },
+    "buttonBackgroundColor": {
+      "type": "string",
+      "default": "#198754"
+    },
+    "buttonTextColor": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "buttonShape": {
+      "type": "string",
+      "default": "mailbob-button--rounded"
+    },
+    "buttonSize": {
+      "type": "string",
+      "default": "mailbob-button--medium"
+    },
+    "buttonAlignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Subscribe"
+    },
+    "buttonTextProcessing": {
+      "type": "string",
+      "default": "Please wait..."
+    },
+    "emailInputLabel": {
+      "type": "string",
+      "default": "Your Email Address"
+    },
+    "emailInputPlaceholder": {
+      "type": "string",
+      "default": "Enter a valid email..."
+    },
+    "successMessage": {
+      "type": "string",
+      "default": "Success! Check your email to confirm."
+    },
+    "errorMessage": {
+      "type": "string",
+      "default": "Please enter a valid email address."
+    },
+    "isRedirect": {
+      "type": "boolean",
+      "default": false
+    },
+    "redirectUrl": {
+      "type": "string"
+    },
+    "containerPadding": {
+      "type": "number",
+      "default": 0
+    },
+    "containerMarginTop": {
+      "type": "number",
+      "default": 0
+    },
+    "containerMarginBottom": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "textdomain": "mailbob",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScriptModule": "file:./view.js"
+}

@@ -1,0 +1,145 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+:root {
+  --mailbob-color-background: inherit;
+  --mailbob-color-text: inherit;
+  --mailbob-padding: 0;
+  --mailbob-marging-top: 0;
+  --mailbob-marging-bottom: 0;
+
+  --mailbob-button-color-background: inherit;
+  --mailbob-button-color-text: inherit;
+  --mailbob-button-alignment: right;
+}
+
+.mailbob-section {
+  background-color: var(--mailbob-color-background);
+  padding: var(--mailbob-padding);
+  margin-top: var(--mailbob-marging-top);
+  margin-bottom: var(--mailbob-marging-bottom);
+
+  *, ::after, ::before {
+    box-sizing: border-box;
+  }
+
+  .from-group {
+    margin-bottom: 10px;
+  }
+
+  input.form-control, input {
+    width: 100%;
+    height: auto;
+    border: solid 1px #ced4da;
+    min-height: 45px;
+    padding: 10px 15px;
+    font-size: 16px;
+    display: block;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+  }
+
+  label {
+    color: var(--mailbob-color-text);
+    display: inline-block;
+    margin-bottom: .5rem;
+  }
+
+
+  .mailbob-message {
+    color: #229861;
+    padding-bottom: 10px;
+    &--error {
+      color: #dc3545;
+    }
+  }
+
+  .mailbob-button {
+    text-align: center;
+    background-color: var(--mailbob-button-color-background);
+    border: none;
+    box-shadow: none;
+    color: var(--mailbob-button-color-text);
+    cursor: pointer;
+    text-decoration: none;
+    word-break: break-word;
+    transition: 0.3s ease;
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 16px;
+    line-height: 1.5;
+
+    &:hover {
+      box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
+    }
+
+    &--square {
+      border-radius: 0;
+    }
+
+    &--rounded {
+      border-radius: 5px;
+    }
+
+    &--circular {
+      border-radius: 120px;
+    }
+
+    &--small {
+      padding: 5px 15px;
+      font-size: 12px;
+    }
+
+    &--medium {
+      padding: 10px 25px;
+      font-size: 16px;
+    }
+
+    &--large {
+      padding: 15px 30px;
+      font-size: 20px
+    }
+
+    &--extralarge {
+      padding: 20px 40px;
+      font-size: 24px;
+    }
+  }
+}
+
+.mailbob-form-wrap {
+  .components-base-control__field {
+    margin-bottom: 0;
+  }
+
+  .form-group {
+    &:first-child {
+      flex-grow: 1;
+    }
+
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-weight: normal;
+  }
+
+  button {
+    font-weight: normal;
+  }
+}
+
+.mailbob-form-inline {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+
+  button {
+    margin-left: 15px;
+  }
+}
