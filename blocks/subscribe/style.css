@@ -1,0 +1,123 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+:root {
+  --mailbob-color-background: inherit;
+  --mailbob-color-text: inherit;
+  --mailbob-padding: 0;
+  --mailbob-marging-top: 0;
+  --mailbob-marging-bottom: 0;
+  --mailbob-button-color-background: inherit;
+  --mailbob-button-color-text: inherit;
+  --mailbob-button-alignment: right;
+}
+
+.mailbob-section {
+  background-color: var(--mailbob-color-background);
+  padding: var(--mailbob-padding);
+  margin-top: var(--mailbob-marging-top);
+  margin-bottom: var(--mailbob-marging-bottom);
+}
+.mailbob-section *, .mailbob-section ::after, .mailbob-section ::before {
+  box-sizing: border-box;
+}
+.mailbob-section .from-group {
+  margin-bottom: 10px;
+}
+.mailbob-section input.form-control, .mailbob-section input {
+  width: 100%;
+  height: auto;
+  border: solid 1px #ced4da;
+  min-height: 45px;
+  padding: 10px 15px;
+  font-size: 16px;
+  display: block;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+}
+.mailbob-section label {
+  color: var(--mailbob-color-text);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.mailbob-section .mailbob-message {
+  color: #229861;
+  padding-bottom: 10px;
+}
+.mailbob-section .mailbob-message--error {
+  color: #dc3545;
+}
+.mailbob-section .mailbob-button {
+  text-align: center;
+  background-color: var(--mailbob-button-color-background);
+  border: none;
+  box-shadow: none;
+  color: var(--mailbob-button-color-text);
+  cursor: pointer;
+  text-decoration: none;
+  word-break: break-word;
+  transition: 0.3s ease;
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.mailbob-section .mailbob-button:hover {
+  box-shadow: inset 0 0 200px rgba(255, 255, 255, 0.15);
+}
+.mailbob-section .mailbob-button--square {
+  border-radius: 0;
+}
+.mailbob-section .mailbob-button--rounded {
+  border-radius: 5px;
+}
+.mailbob-section .mailbob-button--circular {
+  border-radius: 120px;
+}
+.mailbob-section .mailbob-button--small {
+  padding: 5px 15px;
+  font-size: 12px;
+}
+.mailbob-section .mailbob-button--medium {
+  padding: 10px 25px;
+  font-size: 16px;
+}
+.mailbob-section .mailbob-button--large {
+  padding: 15px 30px;
+  font-size: 20px;
+}
+.mailbob-section .mailbob-button--extralarge {
+  padding: 20px 40px;
+  font-size: 24px;
+}
+
+.mailbob-form-wrap .components-base-control__field {
+  margin-bottom: 0;
+}
+.mailbob-form-wrap .form-group {
+  margin-bottom: 10px;
+}
+.mailbob-form-wrap .form-group:first-child {
+  flex-grow: 1;
+}
+.mailbob-form-wrap label {
+  font-weight: normal;
+}
+.mailbob-form-wrap button {
+  font-weight: normal;
+}
+
+.mailbob-form-inline {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+}
+.mailbob-form-inline button {
+  margin-left: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */

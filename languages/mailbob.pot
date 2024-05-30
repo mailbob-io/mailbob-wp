@@ -1,122 +1,392 @@
-# Copyright (C) 2024 mailbob
-# This file is distributed under the same license as the mailbob package.
+# Copyright (C) 2024 Mailbob
+# This file is distributed under the same license as the Mailbob plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: mailbob\n"
+"Project-Id-Version: Mailbob 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mailbob-wp\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-28 03:28+0000\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"POT-Creation-Date: 2024-06-02T14:45:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: mailbob\n"
 
-#: ../blocks/build/block-subscription/render.php:26, ../blocks/src/block-subscription/render.php:26
-msgid "Subscribe..."
-msgstr ""
-
-#: ../mailbob.php:48
-msgid "Mailbob is unable to find the Bootstrap class."
-msgstr ""
-
-#: ../mailbob.php:61
-msgid "Mailbob is unable to run the Bootstrap class."
-msgstr ""
-
-#. translators: %s: php class namespace
-#: ../src/Bootstrap.php:162
-msgid "Could not load class \"%s\". The \"init\" method is probably missing or try a `composer dumpautoload -o` to refresh the autoloader."
-msgstr ""
-
-#: ../src/Bootstrap.php:168
-msgid "Plugin initialize failed"
-msgstr ""
-
-#: ../src/Common/Functions.php:59
-msgid "Connect"
-msgstr ""
-
-#: ../src/Common/Functions.php:59
-msgid "Connected"
-msgstr ""
-
-#: ../src/App/Backend/Settings.php:58
-msgid "Settings"
-msgstr ""
-
-#: ../src/App/Backend/Settings.php:68, ../src/App/Backend/Settings.php:68, ../templates/admin/dashboard.php:18
+#. Plugin Name of the plugin
+#. Author of the plugin
+#: mailbob.php:52
+#: mailbob.php:53
 msgid "Mailbob"
 msgstr ""
 
-#: ../src/App/Backend/Settings.php:76
-msgid "You do not have sufficient permissions to access this page."
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+msgid "https://mailbob.io"
 msgstr ""
 
-#. translators: %s: request function
-#: ../src/Common/Traits/Requester.php:53
-msgid "Unknown request type: %s"
+#. Description of the plugin
+msgid "Elevate your personal brand with an email newsletter platform that makes sense. Connect your audience or start from scratch, and send your first campaign in seconds."
 msgstr ""
 
-#: ../src/Common/Traits/Requester.php:56
-msgid "Classes are not being correctly requested"
-msgstr ""
-
-#: ../src/Common/Traits/Singleton.php:51, ../src/Common/Traits/Singleton.php:61
-msgid "Cheatin&#8217; huh?"
-msgstr ""
-
-#: ../src/Common/Utils/Errors.php:50
-msgid "&rsaquo; Fatal Error"
-msgstr ""
-
-#. translators: %s: file path
-#: ../src/Common/Utils/Errors.php:61, ../src/Common/Utils/Errors.php:98
-msgid "Error source: %s"
-msgstr ""
-
-#: ../src/Common/Utils/Errors.php:87
-msgid "&rsaquo; Plugin Disabled"
-msgstr ""
-
-#: ../src/Integrations/Mailbob/Api.php:221
-msgid "Security check failed. Please try again."
-msgstr ""
-
-#: ../src/Integrations/Mailbob/Api.php:226
-msgid "Please enter a valid email address."
-msgstr ""
-
-#: ../src/Integrations/Mailbob/Api.php:243
-msgid "Connection failed. Please try again."
-msgstr ""
-
-#: ../templates/admin/dashboard-form.php:18
-msgid "API Key"
-msgstr ""
-
-#: ../templates/admin/dashboard-form.php:23
-msgid "User ID"
-msgstr ""
-
-#: ../templates/admin/dashboard-form.php:29
+#: admin/dashboard-form.php:4
 msgid "Floating Widget"
 msgstr ""
 
-#: ../templates/admin/dashboard-form.php:33
+#: admin/dashboard-form.php:10
 msgid "Enable"
 msgstr ""
 
-#: ../templates/admin/dashboard-form.php:39
+#: admin/dashboard-form.php:22
 msgid "Primary Color"
 msgstr ""
 
-#: ../templates/admin/dashboard-form.php:45
+#: admin/dashboard-form.php:32
 msgid "Primary Hover Color"
 msgstr ""
 
-#: ../templates/admin/dashboard.php:27
-msgid "Settings Saved"
+#: admin/dashboard.php:16
+msgid "Settings saved."
+msgstr ""
+
+#: admin/dashboard.php:19
+msgid "Nonce error. Please try again."
+msgstr ""
+
+#: admin/dashboard.php:22
+msgid "Connection error (missing keys in response). Please try again."
+msgstr ""
+
+#: admin/dashboard.php:25
+msgid "Connection error. Please try again."
+msgstr ""
+
+#: admin/dashboard.php:28
+msgid "Connection error (invalid response). Please try again."
+msgstr ""
+
+#: admin/dashboard.php:31
+msgid "An unknown error. Please try again."
+msgstr ""
+
+#: admin/dashboard.php:49
+msgid "Connect"
+msgstr ""
+
+#: admin/dashboard.php:49
+msgid "Connected"
+msgstr ""
+
+#: admin/dashboard.php:56
+msgid "Reconnect"
+msgstr ""
+
+#: blocks/src/block-subscription/render.php:27
+msgid "Subscribe..."
+msgstr ""
+
+#: mailbob.php:112
+msgid "Settings"
+msgstr ""
+
+#: mailbob.php:169
+msgid "Security check failed. Please try again."
+msgstr ""
+
+#: mailbob.php:174
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: mailbob.php:191
+msgid "Connection failed. Please try again."
+msgstr ""
+
+#: mailbob.php:219
+msgid "You do not have permission to do this."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:52
+msgid "Padding"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:59
+msgid "Padding Top"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:65
+msgid "Padding Right"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:71
+msgid "Padding Bottom"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:77
+msgid "Padding Left"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:83
+msgid "Padding Vertical"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:89
+msgid "Padding Horizontal"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:137
+msgid "Margin Top"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:143
+msgid "Margin Right"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:149
+msgid "Margin Bottom"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:155
+msgid "Margin Left"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:161
+msgid "Margin Vertical"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:167
+msgid "Margin Horizontal"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:183
+#: blocks/subscribe/index.js:250
+msgid "Small"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:186
+#: blocks/subscribe/index.js:254
+msgid "Medium"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:189
+#: blocks/subscribe/index.js:258
+msgid "Large"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:192
+#: blocks/subscribe/index.js:262
+msgid "Extra Large"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:195
+#: blocks/subscribe/index.js:274
+msgid "Square"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:198
+#: blocks/subscribe/index.js:278
+msgid "Rounded Square"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:201
+#: blocks/subscribe/index.js:282
+msgid "Circular"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:205
+msgid "Button Size"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:216
+msgid "Button Shape"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:253
+#: blocks/subscribe/index.js:128
+msgid "Inline"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:257
+#: blocks/subscribe/index.js:134
+msgid "Block"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:268
+msgid "Form design"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:290
+msgid "Form Style"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:309
+#: blocks/subscribe/index.js:150
+msgid "Mailbob Settings"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:313
+msgid "Success Message"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:314
+#: blocks/subscribe/index.js:157
+msgid "The message shown when people successfully subscribe."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:321
+msgid "Error Message"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:322
+#: blocks/subscribe/index.js:170
+msgid "Displayed when an invalid email is entered."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:328
+#: blocks/subscribe/index.js:181
+msgid "General Settings"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:332
+msgid "Block Padding"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:333
+msgid "Adjust the padding applied to the inside of the block."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:342
+msgid "Block Margin Top"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:350
+msgid "Block Margin Bottom"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:372
+msgid "Color Settings"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:379
+msgid "Block background color"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:385
+msgid "Block text color"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:391
+#: blocks/subscribe/index.js:305
+msgid "Button background color"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:397
+#: blocks/subscribe/index.js:310
+msgid "Button text color"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:440
+msgid "To access this block, connect your Mailbob subscription."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:444
+msgid "Configure your settings"
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:471
+msgid "Enter a placeholder text..."
+msgstr ""
+
+#: blocks/build/block-subscription/b.js:486
+msgid "Button text…"
+msgstr ""
+
+#: blocks/subscribe/index.js:53
+msgid "To access this block "
+msgstr ""
+
+#: blocks/subscribe/index.js:58
+msgid "connect your Mailbob account"
+msgstr ""
+
+#: blocks/subscribe/index.js:88
+msgid "Enter your email"
+msgstr ""
+
+#: blocks/subscribe/index.js:102
+msgid "Subscribe"
+msgstr ""
+
+#: blocks/subscribe/index.js:125
+msgid "Layout"
+msgstr ""
+
+#: blocks/subscribe/index.js:156
+msgid "Success message"
+msgstr ""
+
+#: blocks/subscribe/index.js:169
+msgid "Error message"
+msgstr ""
+
+#: blocks/subscribe/index.js:185
+msgid "Padding top"
+msgstr ""
+
+#: blocks/subscribe/index.js:192
+msgid "Padding bottom"
+msgstr ""
+
+#: blocks/subscribe/index.js:199
+msgid "Padding left"
+msgstr ""
+
+#: blocks/subscribe/index.js:206
+msgid "Padding right"
+msgstr ""
+
+#: blocks/subscribe/index.js:214
+msgid "Margin top"
+msgstr ""
+
+#: blocks/subscribe/index.js:221
+msgid "Margin bottom"
+msgstr ""
+
+#: blocks/subscribe/index.js:228
+msgid "Margin left"
+msgstr ""
+
+#: blocks/subscribe/index.js:235
+msgid "Margin right"
+msgstr ""
+
+#: blocks/subscribe/index.js:243
+msgid "Button size"
+msgstr ""
+
+#: blocks/subscribe/index.js:267
+msgid "Button shape"
+msgstr ""
+
+#: blocks/subscribe/index.js:289
+msgid "Color settings"
+msgstr ""
+
+#: blocks/subscribe/index.js:294
+msgid "Background color"
+msgstr ""
+
+#: blocks/subscribe/index.js:299
+msgid "Text color"
+msgstr ""
+
+#: blocks/subscribe/block.json
+msgctxt "block title"
+msgid "Mailbob Subscription"
+msgstr ""
+
+#: blocks/subscribe/block.json
+msgctxt "block description"
+msgid "Add an email Mailbob Subscription form."
 msgstr ""
