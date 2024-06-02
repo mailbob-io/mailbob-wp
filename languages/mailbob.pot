@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-02T14:45:11+00:00\n"
+"POT-Creation-Date: 2024-06-02T18:18:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: mailbob\n"
@@ -70,19 +70,19 @@ msgstr ""
 msgid "An unknown error. Please try again."
 msgstr ""
 
-#: admin/dashboard.php:49
+#: admin/dashboard.php:50
 msgid "Connect"
 msgstr ""
 
-#: admin/dashboard.php:49
+#: admin/dashboard.php:50
 msgid "Connected"
 msgstr ""
 
-#: admin/dashboard.php:56
+#: admin/dashboard.php:57
 msgid "Reconnect"
 msgstr ""
 
-#: blocks/src/block-subscription/render.php:27
+#: blocks/subscribe/render.php:20
 msgid "Subscribe..."
 msgstr ""
 
@@ -90,215 +90,20 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: mailbob.php:169
+#: mailbob.php:168
 msgid "Security check failed. Please try again."
 msgstr ""
 
-#: mailbob.php:174
+#: mailbob.php:172
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: mailbob.php:191
-msgid "Connection failed. Please try again."
+#: mailbob.php:187
+msgid "Subscription. Please try again."
 msgstr ""
 
-#: mailbob.php:219
+#: mailbob.php:209
 msgid "You do not have permission to do this."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:52
-msgid "Padding"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:59
-msgid "Padding Top"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:65
-msgid "Padding Right"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:71
-msgid "Padding Bottom"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:77
-msgid "Padding Left"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:83
-msgid "Padding Vertical"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:89
-msgid "Padding Horizontal"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:137
-msgid "Margin Top"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:143
-msgid "Margin Right"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:149
-msgid "Margin Bottom"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:155
-msgid "Margin Left"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:161
-msgid "Margin Vertical"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:167
-msgid "Margin Horizontal"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:183
-#: blocks/subscribe/index.js:250
-msgid "Small"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:186
-#: blocks/subscribe/index.js:254
-msgid "Medium"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:189
-#: blocks/subscribe/index.js:258
-msgid "Large"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:192
-#: blocks/subscribe/index.js:262
-msgid "Extra Large"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:195
-#: blocks/subscribe/index.js:274
-msgid "Square"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:198
-#: blocks/subscribe/index.js:278
-msgid "Rounded Square"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:201
-#: blocks/subscribe/index.js:282
-msgid "Circular"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:205
-msgid "Button Size"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:216
-msgid "Button Shape"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:253
-#: blocks/subscribe/index.js:128
-msgid "Inline"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:257
-#: blocks/subscribe/index.js:134
-msgid "Block"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:268
-msgid "Form design"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:290
-msgid "Form Style"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:309
-#: blocks/subscribe/index.js:150
-msgid "Mailbob Settings"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:313
-msgid "Success Message"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:314
-#: blocks/subscribe/index.js:157
-msgid "The message shown when people successfully subscribe."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:321
-msgid "Error Message"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:322
-#: blocks/subscribe/index.js:170
-msgid "Displayed when an invalid email is entered."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:328
-#: blocks/subscribe/index.js:181
-msgid "General Settings"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:332
-msgid "Block Padding"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:333
-msgid "Adjust the padding applied to the inside of the block."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:342
-msgid "Block Margin Top"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:350
-msgid "Block Margin Bottom"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:372
-msgid "Color Settings"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:379
-msgid "Block background color"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:385
-msgid "Block text color"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:391
-#: blocks/subscribe/index.js:305
-msgid "Button background color"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:397
-#: blocks/subscribe/index.js:310
-msgid "Button text color"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:440
-msgid "To access this block, connect your Mailbob subscription."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:444
-msgid "Configure your settings"
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:471
-msgid "Enter a placeholder text..."
-msgstr ""
-
-#: blocks/build/block-subscription/b.js:486
-msgid "Button text…"
 msgstr ""
 
 #: blocks/subscribe/index.js:53
@@ -309,76 +114,136 @@ msgstr ""
 msgid "connect your Mailbob account"
 msgstr ""
 
-#: blocks/subscribe/index.js:88
+#: blocks/subscribe/index.js:93
 msgid "Enter your email"
 msgstr ""
 
-#: blocks/subscribe/index.js:102
+#: blocks/subscribe/index.js:107
 msgid "Subscribe"
 msgstr ""
 
-#: blocks/subscribe/index.js:125
+#: blocks/subscribe/index.js:130
 msgid "Layout"
 msgstr ""
 
-#: blocks/subscribe/index.js:156
+#: blocks/subscribe/index.js:133
+msgid "Inline"
+msgstr ""
+
+#: blocks/subscribe/index.js:139
+msgid "Block"
+msgstr ""
+
+#: blocks/subscribe/index.js:155
+msgid "Mailbob Settings"
+msgstr ""
+
+#: blocks/subscribe/index.js:161
 msgid "Success message"
 msgstr ""
 
-#: blocks/subscribe/index.js:169
+#: blocks/subscribe/index.js:162
+msgid "The message shown when people successfully subscribe."
+msgstr ""
+
+#: blocks/subscribe/index.js:174
 msgid "Error message"
 msgstr ""
 
-#: blocks/subscribe/index.js:185
+#: blocks/subscribe/index.js:175
+msgid "Displayed when an invalid email is entered."
+msgstr ""
+
+#: blocks/subscribe/index.js:186
+msgid "General Settings"
+msgstr ""
+
+#: blocks/subscribe/index.js:190
 msgid "Padding top"
 msgstr ""
 
-#: blocks/subscribe/index.js:192
+#: blocks/subscribe/index.js:197
 msgid "Padding bottom"
 msgstr ""
 
-#: blocks/subscribe/index.js:199
+#: blocks/subscribe/index.js:204
 msgid "Padding left"
 msgstr ""
 
-#: blocks/subscribe/index.js:206
+#: blocks/subscribe/index.js:211
 msgid "Padding right"
 msgstr ""
 
-#: blocks/subscribe/index.js:214
+#: blocks/subscribe/index.js:218
 msgid "Margin top"
 msgstr ""
 
-#: blocks/subscribe/index.js:221
+#: blocks/subscribe/index.js:225
 msgid "Margin bottom"
 msgstr ""
 
-#: blocks/subscribe/index.js:228
+#: blocks/subscribe/index.js:232
 msgid "Margin left"
 msgstr ""
 
-#: blocks/subscribe/index.js:235
+#: blocks/subscribe/index.js:239
 msgid "Margin right"
 msgstr ""
 
-#: blocks/subscribe/index.js:243
+#: blocks/subscribe/index.js:246
 msgid "Button size"
 msgstr ""
 
-#: blocks/subscribe/index.js:267
+#: blocks/subscribe/index.js:253
+msgid "Small"
+msgstr ""
+
+#: blocks/subscribe/index.js:257
+msgid "Medium"
+msgstr ""
+
+#: blocks/subscribe/index.js:261
+msgid "Large"
+msgstr ""
+
+#: blocks/subscribe/index.js:265
+msgid "Extra Large"
+msgstr ""
+
+#: blocks/subscribe/index.js:270
 msgid "Button shape"
 msgstr ""
 
-#: blocks/subscribe/index.js:289
+#: blocks/subscribe/index.js:277
+msgid "Square"
+msgstr ""
+
+#: blocks/subscribe/index.js:281
+msgid "Rounded Square"
+msgstr ""
+
+#: blocks/subscribe/index.js:285
+msgid "Circular"
+msgstr ""
+
+#: blocks/subscribe/index.js:292
 msgid "Color settings"
 msgstr ""
 
-#: blocks/subscribe/index.js:294
+#: blocks/subscribe/index.js:297
 msgid "Background color"
 msgstr ""
 
-#: blocks/subscribe/index.js:299
+#: blocks/subscribe/index.js:302
 msgid "Text color"
+msgstr ""
+
+#: blocks/subscribe/index.js:308
+msgid "Button background color"
+msgstr ""
+
+#: blocks/subscribe/index.js:313
+msgid "Button text color"
 msgstr ""
 
 #: blocks/subscribe/block.json

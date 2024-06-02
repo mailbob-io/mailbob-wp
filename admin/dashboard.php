@@ -12,23 +12,23 @@
 	<?php if ( $_REQUEST['e'] ?? false ): ?>
 		<div class="mailbob-setting-notice">
 			<?php switch ( $_REQUEST['e'] ):
-				case 'OK':
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Settings saved.', 'mailbob' ), 'updated' );
-					break;
-				case 'NONCE':
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Nonce error. Please try again.', 'mailbob' ), 'error' );
-					break;
-				case 'MISSING':
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error (missing keys in response). Please try again.', 'mailbob' ), 'error' );
-					break;
-				case 'CONNECTION_ERROR':
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error. Please try again.', 'mailbob' ), 'error' );
-					break;
-				case 'INVALID_REQUEST':
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error (invalid response). Please try again.', 'mailbob' ), 'error' );
-					break;
-				default:
-					add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'An unknown error. Please try again.', 'mailbob' ), 'error' );
+					case 'OK':
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Settings saved.', 'mailbob' ), 'updated' );
+						break;
+					case 'NONCE':
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Nonce error. Please try again.', 'mailbob' ), 'error' );
+						break;
+					case 'MISSING':
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error (missing keys in response). Please try again.', 'mailbob' ), 'error' );
+						break;
+					case 'CONNECTION_ERROR':
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error. Please try again.', 'mailbob' ), 'error' );
+						break;
+					case 'INVALID_REQUEST':
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'Connection error (invalid response). Please try again.', 'mailbob' ), 'error' );
+						break;
+					default:
+						add_settings_error( 'mailbob_messages', 'mailbob_message', __( 'An unknown error. Please try again.', 'mailbob' ), 'error' );
 				endswitch;
 			?>
 			
@@ -37,6 +37,7 @@
 	<?php endif; ?>
 
 	<div class="container">
+		<h2 class="hidden">Mailbob Settings</h2>
 		<div class="mailbob-connect">
 			<?php
 				$connect_url = wp_nonce_url( admin_url( 'admin.php?action=mailbob_connect' ), 'mailbob_connect', '_wpnonce_mailbob_connect' );
@@ -51,7 +52,7 @@
 
 				if ( ! empty( $api_key ) ) {
 					printf(
-						'<a href="%s" class="">(%s)</a>',
+						'<a href="%s" class="mailbob-button mailbob-button--rounded" style="margin-left: .5em;">%s</a>',
 						esc_url( $connect_url ),
 						esc_html__( 'Reconnect', 'mailbob' )
 					);

@@ -1,4 +1,4 @@
-#adminmenu .toplevel_page_mailbob{
+#adminmenu .toplevel_page_mailbob {
   .wp-menu-image img{
     width: 20px;
     height: 20px;
@@ -7,11 +7,11 @@
   }
 }
 
-.mailbob-admin-section{
+.mailbob-admin-section {
   background-color: #ffffff;
   padding: 20px;
 
-  form{
+  form {
     max-width: 600px;
   }
   .form-group{
@@ -25,7 +25,7 @@
       padding-right: 10px;
     }
 
-    input.form-control{
+    input.form-control {
       width: 100%;
       max-width: calc(100% - 200px);
       &[type="color"]{
@@ -35,17 +35,17 @@
   }
 }
 
-.mailbob-admin-header{
+.mailbob-admin-header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin: 30px 0;
 
-  h1{
+  h1 {
     font-weight: bold;
   }
 }
 
-.mailbob-dashboard-image{
+.mailbob-dashboard-image {
   width: 150px;
   margin-left: 25px;
 
