@@ -1,24 +1,17 @@
 <?php
 /**
- * Mailbob
- *
- * @package   mailbob
- * @author    Mailbob <author@mailbob.io>
- * @copyright 2024 Mailbob
- * @license   MIT
- * @link      https://mailbob.io
- *
- * Plugin Name:     Mailbob
- * Plugin URI:      https://mailbob.io
- * Description:     Elevate your personal brand with an email newsletter platform that makes sense. Connect your audience or start from scratch, and send your first campaign in seconds.
- * Version:         1.0.0
- * Author:          Mailbob
- * Author URI:      https://mailbob.io
- * Text Domain:     mailbob
- * Domain Path:     /languages
- * Requires PHP:    7.1
- * Requires WP:     5.5.0
- * Namespace:       Mailbob
+ * Plugin Name:       Mailbob
+ * Plugin URI:        https://github.com/mailbob-io/mailbob-wp
+ * Description:       Elevate your personal brand with an email newsletter platform that makes sense. Connect your audience or start from scratch, and send your first campaign in seconds.
+ * Version:           0.1.1
+ * Author:            Mailbob.io
+ * Author URI:        https://mailbob.io
+ * Requires at least: 6.0
+ * Requires PHP:      7.0
+ * License:           GPLv2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       mailbob
+ * Domain Path:       /languages
  */
 
 declare( strict_types = 1 );
@@ -28,6 +21,7 @@ defined( 'ABSPATH' ) || exit;
 final class Mailbob {
 	const __DIR__ = __DIR__;
 	const __FILE__ = __FILE__;
+	const __VERSION__ = '0.1.1';
 
 	const API_BASE = 'https://api.mailbob.io/';
 	const CONNECT_BASE = 'https://mailbob.io/connect/';
@@ -71,7 +65,48 @@ final class Mailbob {
 				'mailbob_settings', [
 					'type' => 'array',
 					'sanitize_callback' => function( $input ) {
-						return $input; // @todo(major): add some sanitization here
+						$input = array_merge(
+							get_option( 'mailbob_settings' ),
+							$input
+						);
+
+						// Defaults.
+						$sanitized_input = [
+							'floating_widget' => [
+								'enable' => false,
+								'primaryColor' => '#198754',
+								'primaryHoverColor' => '#229861',
+							],
+							'user_id' => null,
+							'api_key' => null,
+						];
+
+						// Sanitize and validate.
+						if ( isset( $input['floating_widget']['enable'] ) ) {
+							$sanitized_input['floating_widget']['enable'] = ( bool )$input['floating_widget']['enable'];
+						}
+
+						if ( isset( $input['floating_widget']['primaryColor'] ) ) {
+							if ( preg_match( '/^#([a-f0-9]{6}|[a-f0-9]{8})$/i', sanitize_text_field( $input['floating_widget']['primaryColor'] ), $matches ) ) {
+								$sanitized_input['floating_widget']['primaryColor'] = strtolower($matches[0] );
+							}
+						}
+
+						if ( isset( $input['floating_widget']['primaryHoverColor'] ) ) {
+							if ( preg_match( '/^#([a-f0-9]{6}|[a-f0-9]{8})$/i', sanitize_text_field( $input['floating_widget']['primaryHoverColor'] ), $matches ) ) {
+								$sanitized_input['floating_widget']['primaryHoverColor'] = strtolower( $matches[0] );
+							}
+						}
+
+						if ( isset( $input['user_id'] ) ) {
+							$sanitized_input['user_id'] = substr( sanitize_text_field( $input['user_id'] ), 0, 64 );
+						}
+
+						if ( isset( $input['api_key'] ) ) {
+							$sanitized_input['api_key'] = substr( sanitize_text_field( $input['api_key'] ), 0, 64 );
+						}
+
+						return $sanitized_input;
 					},
 				]
 			);
@@ -92,7 +127,7 @@ final class Mailbob {
 
 			$options = get_option( 'mailbob_settings' );
 
-			wp_add_inline_script( 'mailbob-block-subscription-editor-script', 'window.Mailbob = ' . json_encode( [
+			wp_add_inline_script( 'mailbob-block-subscription-editor-script', 'window.Mailbob = ' . wp_json_encode( [
 				'rootUrl' => plugins_url( '/', __FILE__ ),
 				'settingsUrl' => admin_url( 'admin.php?page=mailbob' ),
 				'apiUserId' => $options['user_id'] ?? false,
@@ -124,7 +159,7 @@ final class Mailbob {
 		 * Embed.
 		 */
 		add_action( 'wp_enqueue_scripts', function() {
-			wp_register_script( 'mailbob-embed-js', 'https://mailbob.io/static/embed.js', [], 1, true );
+			wp_register_script( 'mailbob-embed-js', 'https://mailbob.io/static/embed.js', [], self::__VERSION__, true );
 		} );
 
 		/**
@@ -143,32 +178,34 @@ final class Mailbob {
 
 			wp_enqueue_script( 'mailbob-embed-js' );
 
-			?>
-			<script>
-				window.mbConfig = window.mbConfig || [];
+			$mbConfigJsSafe = wp_json_encode( [
+				'colors' => [
+					'primary' => $options['floating_widget']['primaryColor'] ?? '#198754',
+					'primaryHover' => $options['floating_widget']['primaryHoverColor'] ?? '#229861',
+				],
+				'uid' => $options['user_id'],
+			] );
 
-				function mailbob() {
-					mbConfig.push(arguments);
-				}
-
-				mailbob('colors', {
-					primary: '<?php echo esc_attr( $options['floating_widget']['primaryColor'] ?? '#198754' ); ?>',
-					primaryHover: '<?php echo esc_attr( $options['floating_widget']['primaryHoverColor'] ?? '#229861' ); ?>'
-				});
-				mailbob('uid', '<?php echo esc_attr( $options['user_id'] ); ?>');
-			</script>
-			<?php
+			wp_add_inline_script(
+				'mailbob-embed-js',
+				"mbConfig.push(['colors', ($mbConfigJsSafe).colors]);" .
+				"mbConfig.push(['uid', ($mbConfigJsSafe).uid]);"
+			);
 		} );
 
 		/**
 		 * Blocks.
 		 */
 		add_action( 'wp_ajax_mailbob_block_subscribe', $callback = static function() {
-			if ( ! wp_verify_nonce( $_REQUEST['nonce'] ?? '', 'mailbob_nonce' ) ) {
+			$sanitized_nonce = sanitize_text_field( wp_unslash( $_REQUEST['nonce'] ?? '' ) );
+
+			if ( ! wp_verify_nonce( $sanitized_nonce, 'mailbob_nonce' ) ) {
 				wp_send_json_error( [ 'message' => esc_html__( 'Security check failed. Please try again.', 'mailbob' ) ], 401 );
 			}
 
-			if ( ! is_email( $_REQUEST['email'] ?? '' ) ) {
+			$sanitized_email = sanitize_text_field( $_REQUEST['email'] ?? '' );
+
+			if ( ! is_email( $sanitized_email ) ) {
 				wp_send_json_error( [ 'message' => esc_html__( 'Please enter a valid email address.', 'mailbob' ) ], 400 );
 			}
 			
@@ -179,7 +216,7 @@ final class Mailbob {
 						'Content-Type' => 'application/json',
 						'Authorization' => sprintf( 'Bearer %s:%s', $options['user_id'] ?? '', $options['api_key'] ?? '' ),
 					),
-					'body' => wp_json_encode( [ 'email' => $_REQUEST['email'] ?? '' ] ),
+					'body' => wp_json_encode( [ 'email' => $sanitized_email ] ),
 					'data_format' => 'body',
 			] );
 
@@ -209,10 +246,11 @@ final class Mailbob {
 			wp_die( __( 'You do not have permission to do this.', 'mailbob' ) );
 		}
 
-		switch ( $_REQUEST['action'] ?? '' ):
+		switch ( sanitize_text_field( $_REQUEST['action'] ?? '' ) ):
 			case 'mailbob_connect':
-				$nonce = $_REQUEST['_wpnonce_mailbob_connect'] ?? '';
-				if ( ! wp_verify_nonce( $nonce, 'mailbob_connect' ) ) {
+				$sanitized_nonce = sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce_mailbob_connect'] ?? '' ) );
+
+				if ( ! wp_verify_nonce( $sanitized_nonce, 'mailbob_connect' ) ) {
 					wp_safe_redirect( admin_url( 'admin.php?page=mailbob&e=NONCE' ) );
 					exit;
 				}
@@ -253,26 +291,27 @@ final class Mailbob {
 				exit;
 
 			case 'mailbob_connect_return':
-				$nonce = $_REQUEST['_wpnonce_mailbob_connect_return'] ?? '';
-				if ( ! wp_verify_nonce( $nonce, 'mailbob_connect_return' ) ) {
+				$sanitized_nonce = sanitize_text_field( wp_unslash( $_REQUEST['_wpnonce_mailbob_connect_return'] ?? '' ) );
+
+				if ( ! wp_verify_nonce( $sanitized_nonce, 'mailbob_connect_return' ) ) {
 					wp_safe_redirect( admin_url( 'admin.php?page=mailbob&e=NONCE' ) );
 					exit;
 				}
 
-				$user_id = $_REQUEST['mailbob_user_id'] ?? null;
-				$api_key = $_REQUEST['mailbob_api_key'] ?? null;
+				$sanitized_user_id = sanitize_text_field( $_REQUEST['mailbob_user_id'] ?? '' );
+				$sanitized_api_key = sanitize_text_field( $_REQUEST['mailbob_api_key'] ?? '' );
 
-				if ( ! $user_id || ! $api_key ) {
+				if ( ! $sanitized_user_id || ! $sanitized_api_key ) {
 					wp_safe_redirect( admin_url( 'admin.php?page=mailbob&e=MISSING' ) );
 					exit;
 				}
 
-				// @todo(major): verify the keys, and not just here
+				// @todo(major): verify the keys against the API, and not just here
 
 				$options = get_option( 'mailbob_settings' );
 
-				$options['user_id'] = $user_id;
-				$options['api_key'] = $api_key;
+				$options['user_id'] = $sanitized_user_id;
+				$options['api_key'] = $sanitized_api_key;
 
 				update_option( 'mailbob_settings', $options );
 

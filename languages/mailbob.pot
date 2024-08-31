@@ -1,33 +1,44 @@
-# Copyright (C) 2024 Mailbob
-# This file is distributed under the same license as the Mailbob plugin.
+# Copyright (C) 2024 Mailbob.io
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Mailbob 1.0.0\n"
+"Project-Id-Version: Mailbob 0.1.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mailbob-wp\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-06-02T18:18:03+00:00\n"
+"POT-Creation-Date: 2024-08-31T12:17:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.8.1\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: mailbob\n"
 
 #. Plugin Name of the plugin
-#. Author of the plugin
-#: mailbob.php:52
-#: mailbob.php:53
+#: mailbob.php
+#: mailbob.php:46
+#: mailbob.php:47
 msgid "Mailbob"
 msgstr ""
 
 #. Plugin URI of the plugin
-#. Author URI of the plugin
-msgid "https://mailbob.io"
+#: mailbob.php
+msgid "https://github.com/mailbob-io/mailbob-wp"
 msgstr ""
 
 #. Description of the plugin
+#: mailbob.php
 msgid "Elevate your personal brand with an email newsletter platform that makes sense. Connect your audience or start from scratch, and send your first campaign in seconds."
+msgstr ""
+
+#. Author of the plugin
+#: mailbob.php
+msgid "Mailbob.io"
+msgstr ""
+
+#. Author URI of the plugin
+#: mailbob.php
+msgid "https://mailbob.io"
 msgstr ""
 
 #: admin/dashboard-form.php:4
@@ -86,23 +97,23 @@ msgstr ""
 msgid "Subscribe..."
 msgstr ""
 
-#: mailbob.php:112
+#: mailbob.php:147
 msgid "Settings"
 msgstr ""
 
-#: mailbob.php:168
+#: mailbob.php:203
 msgid "Security check failed. Please try again."
 msgstr ""
 
-#: mailbob.php:172
+#: mailbob.php:209
 msgid "Please enter a valid email address."
 msgstr ""
 
-#: mailbob.php:187
+#: mailbob.php:224
 msgid "Subscription. Please try again."
 msgstr ""
 
-#: mailbob.php:209
+#: mailbob.php:246
 msgid "You do not have permission to do this."
 msgstr ""
 
