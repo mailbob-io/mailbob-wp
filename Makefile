@@ -1,9 +1,9 @@
 all: styles translations zip
 
 styles: static/admin.scss blocks/subscribe/editor.scss blocks/subscribe/style.scss
-	sass static/admin.scss static/admin.css
-	sass blocks/subscribe/editor.scss blocks/subscribe/editor.css
-	sass blocks/subscribe/style.scss blocks/subscribe/style.css
+	npx sass static/admin.scss static/admin.css
+	npx sass blocks/subscribe/editor.scss blocks/subscribe/editor.css
+	npx sass blocks/subscribe/style.scss blocks/subscribe/style.css
 
 translations: languages/mailbob.pot
 	wp i18n make-pot . languages/mailbob.pot

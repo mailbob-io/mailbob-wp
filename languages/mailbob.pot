@@ -9,35 +9,30 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-31T12:17:07+00:00\n"
+"POT-Creation-Date: 2024-09-18T12:27:37+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.11.0\n"
+"X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: mailbob\n"
 
 #. Plugin Name of the plugin
-#: mailbob.php
 #: mailbob.php:46
 #: mailbob.php:47
 msgid "Mailbob"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: mailbob.php
 msgid "https://github.com/mailbob-io/mailbob-wp"
 msgstr ""
 
 #. Description of the plugin
-#: mailbob.php
 msgid "Elevate your personal brand with an email newsletter platform that makes sense. Connect your audience or start from scratch, and send your first campaign in seconds."
 msgstr ""
 
 #. Author of the plugin
-#: mailbob.php
 msgid "Mailbob.io"
 msgstr ""
 
 #. Author URI of the plugin
-#: mailbob.php
 msgid "https://mailbob.io"
 msgstr ""
 
