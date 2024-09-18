@@ -1,8 +1,8 @@
 === Mailbob ===
 
 Stable tag:        0.1.1
-Contributors:      Kafleg, soulseekah, kovshenin, mailbob
-Tags:              blocks, editor, gutenberg, gutenberg blocks, Mailbob, subscription, newsletter
+Contributors:      Kafleg, soulseekah, kovshenin
+Tags:              Mailbob, subscription, newsletter
 Requires at least: 6.1
 Tested up to:      6.6
 Requires PHP:      7.0
